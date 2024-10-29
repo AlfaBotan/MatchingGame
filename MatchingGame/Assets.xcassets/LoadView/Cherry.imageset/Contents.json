@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Gamefruit_neon_Game_icon._cherries.__smade_of_resin 1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Gamefruit_neon_Game_icon._cherries.__smade_of_resin 1@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Gamefruit_neon_Game_icon._cherries.__smade_of_resin 1@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

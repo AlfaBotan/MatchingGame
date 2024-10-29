@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Cyclops Smash_lp1_grapes.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Cyclops Smash_lp1_grapes@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Cyclops Smash_lp1_grapes@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
