@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoadingViewController: UIViewController {
+final class LoadingViewController: UIViewController {
     private lazy var backImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "BackImage")
@@ -154,7 +154,7 @@ class LoadingViewController: UIViewController {
         }
     }
     
-    func startFlashingAnimation() {
+    private func startFlashingAnimation() {
         UIView.animateKeyframes(withDuration: 2.0, delay: 0, options: [.repeat, .calculationModeLinear]) {
             UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.2) {
                 self.flameImageView.alpha = 1.0
@@ -180,15 +180,22 @@ class LoadingViewController: UIViewController {
         
     }
     
-    func navigateToMainMenuAfterDelay() {
+   private func navigateToMainMenuAfterDelay() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             self.navigateToMainMenu()
             self.flameImageView.layer.removeAllAnimations()
         }
     }
     
-    func navigateToMainMenu() {
-        
+    private func navigateToMainMenu() {
+        let mainViewController = MenuViewController()
+           let navigationController = UINavigationController(rootViewController: mainViewController)
+           
+           guard let window = UIApplication.shared.windows.first else { return }
+
+           UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {
+               window.rootViewController = navigationController
+           })
     }
 }
 
