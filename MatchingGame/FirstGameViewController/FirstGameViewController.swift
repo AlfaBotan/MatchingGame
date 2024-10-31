@@ -384,6 +384,8 @@ final class FirstGameViewController: UIViewController {
     func repeatTapped() {
         stopwatchTimer?.invalidate()
         elapsedTime = 0
+        counter = 0
+        updateCounterLable()
         updateStopwatchLabel()
         for cell in collectionView.visibleCells {
             if let customCell = cell as? CustomCollectionViewCell {
