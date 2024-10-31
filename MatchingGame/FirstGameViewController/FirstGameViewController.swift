@@ -352,7 +352,9 @@ final class FirstGameViewController: UIViewController {
     }
     
     private func showWinViewController() {
-        guard let time = stopwatchLabel.text else {return}
+        let minutes = Int(elapsedTime) / 60
+        let seconds = Int(elapsedTime) % 60
+        let time = "TIME: " + String(format: "%02d:%02d", minutes, seconds)
         let winVC = WinViewController(step: counter, time: time, delegate: self)
         winVC.modalPresentationStyle = .overFullScreen
         self.present(winVC, animated: true, completion: nil)
@@ -498,7 +500,7 @@ extension FirstGameViewController {
             }
         }
         if openCell == 16 {
-            print("Все ячейки открыты")
+            showWinViewController()
             stopwatchTimer?.invalidate()
             elapsedTime = 0
             updateStopwatchLabel()
@@ -507,7 +509,6 @@ extension FirstGameViewController {
                     customCell.closeIcon()
                 }
             }
-            showWinViewController()
             counter = 0
             updateCounterLable()
             collectionView.reloadData()

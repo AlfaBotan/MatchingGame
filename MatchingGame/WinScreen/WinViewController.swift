@@ -73,7 +73,7 @@ final class WinViewController: UIViewController {
     
     private lazy var stopwatchLabel: UILabel = {
         let label = UILabel()
-        label.text = "TIME: " + time
+        label.text = time
         label.font = UIFont(name: "Multiround Pro", size: 20)
         label.textAlignment = .center
         label.textColor = .white
@@ -110,6 +110,7 @@ final class WinViewController: UIViewController {
         self.step = step
         self.time = time
         super.init(nibName: nil, bundle: nil)
+        self.stopwatchLabel.text = time
     }
     
     required init?(coder: NSCoder) {
