@@ -10,6 +10,7 @@ import SafariServices
 
 final class MenuViewController: UIViewController {
     
+    //MARK: UI Elements
     private lazy var backImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "BackImage")
@@ -159,6 +160,7 @@ final class MenuViewController: UIViewController {
         return shadowView
     }()
     
+    //MARK: Private Properties
     private let bottomGradientLayerForGame = CAGradientLayer()
     private let middleGradientLayerForGame = CAGradientLayer()
     private let topGradientLayerForGame = CAGradientLayer()
@@ -166,11 +168,17 @@ final class MenuViewController: UIViewController {
     private let middleGradientLayerForPrivacyPolicy = CAGradientLayer()
     private let topGradientLayerForPrivacyPolicy = CAGradientLayer()
     
+    //MARK: Override func
     override func viewDidLoad() {
         super.viewDidLoad()
         configViews()
         addConstraint()
         addGradients()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewDidLayoutSubviews() {
@@ -184,6 +192,7 @@ final class MenuViewController: UIViewController {
         topGradientLayerForPrivacyPolicy.frame = topShadowViewForPrivacy.bounds
     }
     
+    //MARK: Private funcs
     private func configViews() {
         view.addSubview(backImageView)
         starsImageViews.forEach { backImageView.addSubview($0) }
@@ -345,8 +354,6 @@ final class MenuViewController: UIViewController {
         
         topShadowViewForGame.layer.insertSublayer(topGradientLayerForGame, at: 0)
         
-        //
-        
         bottomGradientLayerForPrivacyPolicy.colors = [
             UIColor(red: 255/255, green: 0/255, blue: 3/255, alpha: 0.4).cgColor,
             UIColor(red: 87/255, green: 0/255, blue: 1/255, alpha: 0.4).cgColor
@@ -375,9 +382,11 @@ final class MenuViewController: UIViewController {
         topShadowViewForPrivacy.layer.insertSublayer(topGradientLayerForPrivacyPolicy, at: 0)
     }
     
+    //MARK: Selectors
     @objc
     private func firstGameButtonPress() {
-        print("Game")
+        let gameViewController = FirstGameViewController()
+        navigationController?.pushViewController(gameViewController, animated: true)
     }
     
     @objc
@@ -391,6 +400,7 @@ final class MenuViewController: UIViewController {
     }
 }
 
+//MARK: Extensions
 extension MenuViewController: SFSafariViewControllerDelegate {
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         navigationController?.popViewController(animated: true)

@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "yasusu5048_Simple_lake_close-up_animation_for_5_year_olds_cryst_fb975c32-e818-4c37-9278-3bb4fc63777c 1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "yasusu5048_Simple_lake_close-up_animation_for_5_year_olds_cryst_fb975c32-e818-4c37-9278-3bb4fc63777c 1@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "yasusu5048_Simple_lake_close-up_animation_for_5_year_olds_cryst_fb975c32-e818-4c37-9278-3bb4fc63777c 1@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

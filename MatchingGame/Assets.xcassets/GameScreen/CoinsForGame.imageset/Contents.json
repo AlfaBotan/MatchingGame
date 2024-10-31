@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "cobucco_2d_C_Egyptian_Pyramids_represent_graphic_design_Ilustra_cf549288-47e8-44e3-99b5-d001a4a35434-PhotoRoom (6) 1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "cobucco_2d_C_Egyptian_Pyramids_represent_graphic_design_Ilustra_cf549288-47e8-44e3-99b5-d001a4a35434-PhotoRoom (6) 1@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "cobucco_2d_C_Egyptian_Pyramids_represent_graphic_design_Ilustra_cf549288-47e8-44e3-99b5-d001a4a35434-PhotoRoom (6) 1@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
