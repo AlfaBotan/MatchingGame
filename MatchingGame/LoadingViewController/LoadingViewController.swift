@@ -181,7 +181,7 @@ final class LoadingViewController: UIViewController {
     }
     
    private func navigateToMainMenuAfterDelay() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             self.navigateToMainMenu()
             self.flameImageView.layer.removeAllAnimations()
         }
