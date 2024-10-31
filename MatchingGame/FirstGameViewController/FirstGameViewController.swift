@@ -99,6 +99,7 @@ final class FirstGameViewController: UIViewController {
             updateCounterLable()
         }
     }
+    private var isStop: Bool = false
     private var stopwatchTimer: Timer?
     private var elapsedTime: TimeInterval = 0
     private var actionButtons: [UIButton] = []
@@ -379,7 +380,15 @@ final class FirstGameViewController: UIViewController {
     
     @objc
     func pauseTapped() {
-        stopwatchTimer?.invalidate()
+        if isStop {
+            isStop.toggle()
+            collectionView.isUserInteractionEnabled = true
+            startStopwatch()
+        } else {
+            isStop.toggle()
+            collectionView.isUserInteractionEnabled = false
+            stopwatchTimer?.invalidate()
+        }
     }
     
     @objc
