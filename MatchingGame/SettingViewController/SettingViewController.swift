@@ -198,14 +198,16 @@ final class SettingViewController: UIViewController {
     }
     
     private func setUpConstraints(){
+        let totalHeight = UIScreen.main.bounds.height
+        
         NSLayoutConstraint.activate([
             frameForSettings.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -10),
             frameForSettings.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 10),
             frameForSettings.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
-            frameForSettings.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -250),
+            frameForSettings.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -totalHeight*0.25),
             
             gradientViews[0].trailingAnchor.constraint(equalTo: frameForSettings.centerXAnchor, constant: -50),
-            gradientViews[0].topAnchor.constraint(equalTo: frameForSettings.centerYAnchor, constant: 30),
+            gradientViews[0].topAnchor.constraint(equalTo: bottomShadowViewForMenu.bottomAnchor, constant: totalHeight*0.05),
             
             gradientViews[1].leadingAnchor.constraint(equalTo: frameForSettings.centerXAnchor, constant: 50),
             gradientViews[1].topAnchor.constraint(equalTo: gradientViews[0].topAnchor),
@@ -217,7 +219,7 @@ final class SettingViewController: UIViewController {
             actionButtons[1].centerYAnchor.constraint(equalTo: gradientViews[1].centerYAnchor),
             
             bottomShadowViewForResume.centerXAnchor.constraint(equalTo: frameForSettings.centerXAnchor),
-            bottomShadowViewForResume.centerYAnchor.constraint(equalTo: frameForSettings.topAnchor, constant: 90),
+            bottomShadowViewForResume.centerYAnchor.constraint(equalTo: frameForSettings.centerYAnchor, constant: -totalHeight*0.1),
             bottomShadowViewForResume.widthAnchor.constraint(equalToConstant: 194),
             bottomShadowViewForResume.heightAnchor.constraint(equalToConstant: 50),
             
@@ -237,7 +239,7 @@ final class SettingViewController: UIViewController {
             resumeButton.centerYAnchor.constraint(equalTo: bottomShadowViewForResume.centerYAnchor),
             
             bottomShadowViewForMenu.centerXAnchor.constraint(equalTo: frameForSettings.centerXAnchor),
-            bottomShadowViewForMenu.centerYAnchor.constraint(equalTo: frameForSettings.topAnchor, constant: 180),
+            bottomShadowViewForMenu.centerYAnchor.constraint(equalTo: frameForSettings.centerYAnchor, constant: totalHeight*0.03),
             bottomShadowViewForMenu.widthAnchor.constraint(equalToConstant: 194),
             bottomShadowViewForMenu.heightAnchor.constraint(equalToConstant: 50),
             
