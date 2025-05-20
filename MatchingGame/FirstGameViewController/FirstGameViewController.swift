@@ -104,7 +104,7 @@ final class FirstGameViewController: UIViewController {
     private var elapsedTime: TimeInterval = 0
     private var actionButtons: [UIButton] = []
     private var gradientViews: [UIView] = []
-    private var images = (1..<9).map { UIImage(named: "icon\($0)")!}
+    private var images = (2..<9).map { UIImage(named: "Icon\($0)")!}
     private var shuffledImages: [UIImage] = []
     private var selectedCells: [IndexPath] = []
     private let gradientLayerForButtons = CAGradientLayer()
@@ -349,6 +349,7 @@ final class FirstGameViewController: UIViewController {
     }
     
     private func shuffleImages() {
+        images.append(UIImage(named: "icon1")!)
         shuffledImages = (images + images).shuffled()
     }
     
